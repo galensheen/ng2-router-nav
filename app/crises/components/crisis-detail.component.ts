@@ -20,8 +20,9 @@ export class CrisisDetailComponent implements OnInit {
     constructor(private crisesService: CrisesService, private route: ActivatedRoute, private router: Router) {}
 
     ngOnInit() {
-        this.route.params.switchMap((params: Params) => this.crisesService.getCrisis(+params['id']))
-            .subscribe(crisis => this.crisis = crisis);
+        this.route.data.subscribe((data: {crisis: Crisis}) => {
+            this.crisis = data.crisis;
+        });
     }
 
     gotoCrises() {

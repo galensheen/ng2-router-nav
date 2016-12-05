@@ -23,8 +23,9 @@ var CrisisDetailComponent = (function () {
     }
     CrisisDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.route.params.switchMap(function (params) { return _this.crisesService.getCrisis(+params['id']); })
-            .subscribe(function (crisis) { return _this.crisis = crisis; });
+        this.route.data.subscribe(function (data) {
+            _this.crisis = data.crisis;
+        });
     };
     CrisisDetailComponent.prototype.gotoCrises = function () {
         this.router.navigate(['../'], { relativeTo: this.route });

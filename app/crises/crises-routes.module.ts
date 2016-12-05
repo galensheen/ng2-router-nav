@@ -9,12 +9,20 @@ import {CrisesComponent} from './components/crises.component';
 import {CrisisDetailComponent} from './components/crisis-detail.component';
 import {CrisisDetailDefaultComponent} from './components/crisis-detail-default.component';
 
+import {CrisisDetailResolveService} from './services/crisis-detail-resolve.service';
+
 const crisesRoutes: Routes = [
     {
         path: 'crises',
         component: CrisesComponent,
         children: [
-            {path: ':id', component: CrisisDetailComponent},
+            {
+                path: ':id',
+                component: CrisisDetailComponent,
+                resolve: {
+                    crisis: CrisisDetailResolveService
+                }
+            },
             {path: '', component: CrisisDetailDefaultComponent}
         ]
     }
@@ -22,6 +30,8 @@ const crisesRoutes: Routes = [
 
 @NgModule({
     imports: [RouterModule.forChild(crisesRoutes)],
-    exports: [RouterModule]
+    exports: [RouterModule],
+    providers: [CrisisDetailResolveService]
 })
-export class CrisesRoutesModule {}
+export class CrisesRoutesModule {
+}

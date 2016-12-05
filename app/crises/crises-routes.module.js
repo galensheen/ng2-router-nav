@@ -16,12 +16,19 @@ var router_1 = require('@angular/router');
 var crises_component_1 = require('./components/crises.component');
 var crisis_detail_component_1 = require('./components/crisis-detail.component');
 var crisis_detail_default_component_1 = require('./components/crisis-detail-default.component');
+var crisis_detail_resolve_service_1 = require('./services/crisis-detail-resolve.service');
 var crisesRoutes = [
     {
         path: 'crises',
         component: crises_component_1.CrisesComponent,
         children: [
-            { path: ':id', component: crisis_detail_component_1.CrisisDetailComponent },
+            {
+                path: ':id',
+                component: crisis_detail_component_1.CrisisDetailComponent,
+                resolve: {
+                    crisis: crisis_detail_resolve_service_1.CrisisDetailResolveService
+                }
+            },
             { path: '', component: crisis_detail_default_component_1.CrisisDetailDefaultComponent }
         ]
     }
@@ -32,7 +39,8 @@ var CrisesRoutesModule = (function () {
     CrisesRoutesModule = __decorate([
         core_1.NgModule({
             imports: [router_1.RouterModule.forChild(crisesRoutes)],
-            exports: [router_1.RouterModule]
+            exports: [router_1.RouterModule],
+            providers: [crisis_detail_resolve_service_1.CrisisDetailResolveService]
         }), 
         __metadata('design:paramtypes', [])
     ], CrisesRoutesModule);
