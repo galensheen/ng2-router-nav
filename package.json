@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/galensheen/ng2-router-nav.git"
   },
-  "author": "",
+  "author": "galensheen",
   "license": "ISC",
   "dependencies": {
     "@angular/common": "^2.2.2",
