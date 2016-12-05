@@ -12,17 +12,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var UserComponent = (function () {
-    function UserComponent() {
+var router_1 = require('@angular/router');
+var admin_component_1 = require('./admin.component');
+var adminRoutes = [
+    { path: 'admin', component: admin_component_1.AdminComponent }
+];
+var AdminRoutesModule = (function () {
+    function AdminRoutesModule() {
     }
-    UserComponent = __decorate([
-        core_1.Component({
-            selector: 'my-user',
-            template: '<div>这是core.component</div>'
+    AdminRoutesModule = __decorate([
+        core_1.NgModule({
+            imports: [router_1.RouterModule.forChild(adminRoutes)],
+            exports: [router_1.RouterModule]
         }), 
         __metadata('design:paramtypes', [])
-    ], UserComponent);
-    return UserComponent;
+    ], AdminRoutesModule);
+    return AdminRoutesModule;
 }());
-exports.UserComponent = UserComponent;
-//# sourceMappingURL=user.component.js.map
+exports.AdminRoutesModule = AdminRoutesModule;
+//# sourceMappingURL=admin-routes.module.js.map

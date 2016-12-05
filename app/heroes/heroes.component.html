@@ -1,0 +1,7 @@
+<h2>英雄中心</h2>
+<ul>
+    <li *ngFor="let hero of heroes | async" (click)="onSelect(hero)">
+        <span>id: {{hero.id}}</span> {{hero.name}}
+    </li>
+</ul>
+<router-outlet></router-outlet>

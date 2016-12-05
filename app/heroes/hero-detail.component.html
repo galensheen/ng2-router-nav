@@ -1,0 +1,10 @@
+<div *ngIf="hero">
+    <h3>应用详情</h3>
+    <div>
+        <span>英雄的ID:</span> {{hero.id}}
+    </div>
+    <div>
+        <span>英雄名字:</span> {{hero.name}}
+    </div>
+</div>
+<button (click)="gotoHeroes()">Back</button>

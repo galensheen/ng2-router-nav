@@ -12,17 +12,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var UserComponent = (function () {
-    function UserComponent() {
+var router_1 = require('@angular/router');
+var appRoutes = [
+    { path: '', redirectTo: '/heroes', pathMatch: 'full' }
+];
+var AppRoutesModule = (function () {
+    function AppRoutesModule() {
     }
-    UserComponent = __decorate([
-        core_1.Component({
-            selector: 'my-user',
-            template: '<div>这是core.component</div>'
+    AppRoutesModule = __decorate([
+        core_1.NgModule({
+            imports: [router_1.RouterModule.forRoot(appRoutes)],
+            exports: [router_1.RouterModule]
         }), 
         __metadata('design:paramtypes', [])
-    ], UserComponent);
-    return UserComponent;
+    ], AppRoutesModule);
+    return AppRoutesModule;
 }());
-exports.UserComponent = UserComponent;
-//# sourceMappingURL=user.component.js.map
+exports.AppRoutesModule = AppRoutesModule;
+//# sourceMappingURL=app-routes.module.js.map

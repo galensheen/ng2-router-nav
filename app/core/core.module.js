@@ -12,17 +12,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var UserComponent = (function () {
-    function UserComponent() {
+var user_component_1 = require('./user.component');
+var CoreModule = (function () {
+    function CoreModule() {
     }
-    UserComponent = __decorate([
-        core_1.Component({
-            selector: 'my-user',
-            template: '<div>这是core.component</div>'
+    CoreModule = __decorate([
+        core_1.NgModule({
+            declarations: [user_component_1.UserComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], UserComponent);
-    return UserComponent;
+    ], CoreModule);
+    return CoreModule;
 }());
-exports.UserComponent = UserComponent;
-//# sourceMappingURL=user.component.js.map
+exports.CoreModule = CoreModule;
+//# sourceMappingURL=core.module.js.map

@@ -11,39 +11,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-// import core libs
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-// import other modules
-var admin_module_1 = require('./admin/admin.module');
-var crises_module_1 = require('./crises/crises.module');
-var heroes_module_1 = require('./heroes/heroes.module');
-var app_routes_module_1 = require('./app-routes.module');
-// import service
-// import component
-var app_component_1 = require('./app.component');
-var AppModule = (function () {
-    function AppModule() {
+var common_1 = require('@angular/common');
+var heroes_routes_module_1 = require('./heroes-routes.module');
+var heroes_component_1 = require('./heroes.component');
+var hero_detail_component_1 = require('./hero-detail.component');
+var heroes_service_1 = require('./heroes.service');
+var hero_detail_default_component_1 = require('./hero-detail-default.component');
+var HeroesModule = (function () {
+    function HeroesModule() {
     }
-    AppModule = __decorate([
+    HeroesModule = __decorate([
         core_1.NgModule({
             imports: [
-                platform_browser_1.BrowserModule,
-                admin_module_1.AdminModule,
-                crises_module_1.CrisesModule,
-                heroes_module_1.HeroesModule,
-                app_routes_module_1.AppRoutesModule
+                common_1.CommonModule,
+                heroes_routes_module_1.HeroesRoutesModule
             ],
             declarations: [
-                app_component_1.AppComponent
+                heroes_component_1.HeroesComponent,
+                hero_detail_component_1.HeroDetailComponent,
+                hero_detail_default_component_1.HeroDetailDefaultComponent
             ],
-            bootstrap: [
-                app_component_1.AppComponent
+            providers: [
+                heroes_service_1.HeroesService
             ]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], HeroesModule);
+    return HeroesModule;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.HeroesModule = HeroesModule;
+//# sourceMappingURL=heroes.module.js.map

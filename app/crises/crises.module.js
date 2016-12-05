@@ -12,17 +12,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var UserComponent = (function () {
-    function UserComponent() {
+var common_1 = require('@angular/common');
+var crises_routes_module_1 = require('./crises-routes.module');
+var crises_component_1 = require('./crises.component');
+var CrisesModule = (function () {
+    function CrisesModule() {
     }
-    UserComponent = __decorate([
-        core_1.Component({
-            selector: 'my-user',
-            template: '<div>这是core.component</div>'
+    CrisesModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                common_1.CommonModule,
+                crises_routes_module_1.CrisesRoutesModule
+            ],
+            declarations: [
+                crises_component_1.CrisesComponent
+            ]
         }), 
         __metadata('design:paramtypes', [])
-    ], UserComponent);
-    return UserComponent;
+    ], CrisesModule);
+    return CrisesModule;
 }());
-exports.UserComponent = UserComponent;
-//# sourceMappingURL=user.component.js.map
+exports.CrisesModule = CrisesModule;
+//# sourceMappingURL=crises.module.js.map

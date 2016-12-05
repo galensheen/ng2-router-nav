@@ -12,17 +12,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var UserComponent = (function () {
-    function UserComponent() {
+var HeroDetailDefaultComponent = (function () {
+    function HeroDetailDefaultComponent() {
     }
-    UserComponent = __decorate([
+    HeroDetailDefaultComponent = __decorate([
         core_1.Component({
-            selector: 'my-user',
-            template: '<div>这是core.component</div>'
+            template: '<h3>请选择英雄查看详情</h3>'
         }), 
         __metadata('design:paramtypes', [])
-    ], UserComponent);
-    return UserComponent;
+    ], HeroDetailDefaultComponent);
+    return HeroDetailDefaultComponent;
 }());
-exports.UserComponent = UserComponent;
-//# sourceMappingURL=user.component.js.map
+exports.HeroDetailDefaultComponent = HeroDetailDefaultComponent;
+//# sourceMappingURL=hero-detail-default.component.js.map
