@@ -7,10 +7,10 @@ import {CommonModule} from '@angular/common';
 
 import {HeroesRoutesModule} from './heroes-routes.module';
 
-import {HeroesComponent} from './heroes.component';
-import {HeroDetailComponent} from './hero-detail.component';
-import {HeroesService} from './heroes.service';
-import {HeroDetailDefaultComponent} from './hero-detail-default.component';
+import {HeroesComponent} from './components/heroes.component';
+import {HeroDetailComponent} from './components/hero-detail.component';
+import {HeroesService} from './services/heroes.service';
+import {HeroDetailDefaultComponent} from './components/hero-detail-default.component';
 
 @NgModule({
     imports: [

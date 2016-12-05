@@ -14,29 +14,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 require('rxjs/add/operator/switchMap');
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var heroes_service_1 = require('./heroes.service');
-var HeroDetailComponent = (function () {
-    function HeroDetailComponent(heroesService, route, router) {
-        this.heroesService = heroesService;
+var crises_service_1 = require('../services/crises.service');
+var CrisisDetailComponent = (function () {
+    function CrisisDetailComponent(crisesService, route, router) {
+        this.crisesService = crisesService;
         this.route = route;
         this.router = router;
     }
-    HeroDetailComponent.prototype.ngOnInit = function () {
+    CrisisDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.route.params.switchMap(function (params) { return _this.heroesService.getHero(+params['id']); })
-            .subscribe(function (hero) { return _this.hero = hero; });
+        this.route.params.switchMap(function (params) { return _this.crisesService.getCrisis(+params['id']); })
+            .subscribe(function (crisis) { return _this.crisis = crisis; });
     };
-    HeroDetailComponent.prototype.gotoHeroes = function () {
+    CrisisDetailComponent.prototype.gotoCrises = function () {
         this.router.navigate(['../'], { relativeTo: this.route });
     };
-    HeroDetailComponent = __decorate([
+    CrisisDetailComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            templateUrl: 'hero-detail.component.html'
+            templateUrl: 'crisis-detail.component.html'
         }), 
-        __metadata('design:paramtypes', [heroes_service_1.HeroesService, router_1.ActivatedRoute, router_1.Router])
-    ], HeroDetailComponent);
-    return HeroDetailComponent;
+        __metadata('design:paramtypes', [crises_service_1.CrisesService, router_1.ActivatedRoute, router_1.Router])
+    ], CrisisDetailComponent);
+    return CrisisDetailComponent;
 }());
-exports.HeroDetailComponent = HeroDetailComponent;
-//# sourceMappingURL=hero-detail.component.js.map
+exports.CrisisDetailComponent = CrisisDetailComponent;
+//# sourceMappingURL=crisis-detail.component.js.map

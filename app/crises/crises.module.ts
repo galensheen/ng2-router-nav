@@ -7,7 +7,10 @@ import {CommonModule} from '@angular/common';
 
 import {CrisesRoutesModule} from './crises-routes.module';
 
-import {CrisesComponent} from './crises.component';
+import {CrisesComponent} from './components/crises.component';
+import {CrisisDetailComponent} from './components/crisis-detail.component';
+import {CrisisDetailDefaultComponent} from './components/crisis-detail-default.component';
+import {CrisesService} from './services/crises.service';
 
 @NgModule({
     imports: [
@@ -15,7 +18,12 @@ import {CrisesComponent} from './crises.component';
         CrisesRoutesModule
     ],
     declarations: [
-        CrisesComponent
+        CrisesComponent,
+        CrisisDetailComponent,
+        CrisisDetailDefaultComponent
+    ],
+    providers: [
+        CrisesService
     ]
 })
 export class CrisesModule {}

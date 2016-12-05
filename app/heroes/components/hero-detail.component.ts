@@ -7,7 +7,7 @@ import 'rxjs/add/operator/switchMap';
 import {Component, OnInit} from '@angular/core';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 
-import {Hero, HeroesService} from './heroes.service';
+import {Hero, HeroesService} from '../services/heroes.service';
 
 @Component({
     moduleId: module.id,

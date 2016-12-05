@@ -13,9 +13,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var heroes_component_1 = require('./heroes.component');
-var hero_detail_component_1 = require('./hero-detail.component');
-var hero_detail_default_component_1 = require('./hero-detail-default.component');
+var heroes_component_1 = require('./components/heroes.component');
+var hero_detail_component_1 = require('./components/hero-detail.component');
+var hero_detail_default_component_1 = require('./components/hero-detail-default.component');
 var heroesRoutes = [
     {
         path: 'heroes',

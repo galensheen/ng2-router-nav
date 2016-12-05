@@ -1,5 +1,5 @@
 /**
- * Created by galen on 16/12/5.
+ * Created by galen on 16/12/6.
  */
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -12,16 +12,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var CrisesComponent = (function () {
-    function CrisesComponent() {
+var CrisisDetailDefaultComponent = (function () {
+    function CrisisDetailDefaultComponent() {
     }
-    CrisesComponent = __decorate([
+    CrisisDetailDefaultComponent = __decorate([
         core_1.Component({
-            template: '<div>这是crises.component</div>'
+            moduleId: module.id,
+            template: '<h3>选择危机查看详情</h3>'
         }), 
         __metadata('design:paramtypes', [])
-    ], CrisesComponent);
-    return CrisesComponent;
+    ], CrisisDetailDefaultComponent);
+    return CrisisDetailDefaultComponent;
 }());
-exports.CrisesComponent = CrisesComponent;
-//# sourceMappingURL=crises.component.js.map
+exports.CrisisDetailDefaultComponent = CrisisDetailDefaultComponent;
+//# sourceMappingURL=crisis-detail-default.component.js.map

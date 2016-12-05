@@ -14,7 +14,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var crises_routes_module_1 = require('./crises-routes.module');
-var crises_component_1 = require('./crises.component');
+var crises_component_1 = require('./components/crises.component');
+var crisis_detail_component_1 = require('./components/crisis-detail.component');
+var crisis_detail_default_component_1 = require('./components/crisis-detail-default.component');
+var crises_service_1 = require('./services/crises.service');
 var CrisesModule = (function () {
     function CrisesModule() {
     }
@@ -25,7 +28,12 @@ var CrisesModule = (function () {
                 crises_routes_module_1.CrisesRoutesModule
             ],
             declarations: [
-                crises_component_1.CrisesComponent
+                crises_component_1.CrisesComponent,
+                crisis_detail_component_1.CrisisDetailComponent,
+                crisis_detail_default_component_1.CrisisDetailDefaultComponent
+            ],
+            providers: [
+                crises_service_1.CrisesService
             ]
         }), 
         __metadata('design:paramtypes', [])

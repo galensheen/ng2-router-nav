@@ -14,7 +14,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 require('rxjs/add/operator/switchMap');
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var heroes_service_1 = require('./heroes.service');
+var heroes_service_1 = require('../services/heroes.service');
 var HeroesComponent = (function () {
     function HeroesComponent(heroesService, route, router) {
         this.heroesService = heroesService;

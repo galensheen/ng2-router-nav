@@ -14,10 +14,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var heroes_routes_module_1 = require('./heroes-routes.module');
-var heroes_component_1 = require('./heroes.component');
-var hero_detail_component_1 = require('./hero-detail.component');
-var heroes_service_1 = require('./heroes.service');
-var hero_detail_default_component_1 = require('./hero-detail-default.component');
+var heroes_component_1 = require('./components/heroes.component');
+var hero_detail_component_1 = require('./components/hero-detail.component');
+var heroes_service_1 = require('./services/heroes.service');
+var hero_detail_default_component_1 = require('./components/hero-detail-default.component');
 var HeroesModule = (function () {
     function HeroesModule() {
     }

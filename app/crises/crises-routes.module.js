@@ -13,9 +13,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var crises_component_1 = require('./crises.component');
+var crises_component_1 = require('./components/crises.component');
+var crisis_detail_component_1 = require('./components/crisis-detail.component');
+var crisis_detail_default_component_1 = require('./components/crisis-detail-default.component');
 var crisesRoutes = [
-    { path: 'crises', component: crises_component_1.CrisesComponent }
+    {
+        path: 'crises',
+        component: crises_component_1.CrisesComponent,
+        children: [
+            { path: ':id', component: crisis_detail_component_1.CrisisDetailComponent },
+            { path: '', component: crisis_detail_default_component_1.CrisisDetailDefaultComponent }
+        ]
+    }
 ];
 var CrisesRoutesModule = (function () {
     function CrisesRoutesModule() {

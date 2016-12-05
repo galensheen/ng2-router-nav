@@ -1,0 +1,7 @@
+<h2>危机中心</h2>
+<ul>
+    <li *ngFor="let crisis of crises | async" (click)="onSelect(crisis)">
+        <label>id: {{crisis.id}}</label> {{crisis.name}}
+    </li>
+</ul>
+<router-outlet></router-outlet>
