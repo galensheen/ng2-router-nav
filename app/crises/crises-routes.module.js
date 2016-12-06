@@ -20,7 +20,7 @@ var crisis_detail_resolve_service_1 = require('./services/crisis-detail-resolve.
 var can_deactivate_guard_service_1 = require('../core/can-deactivate-guard.service');
 var crisesRoutes = [
     {
-        path: 'crises',
+        path: '',
         component: crises_component_1.CrisesComponent,
         children: [
             {

@@ -15,14 +15,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 // import other modules
-var admin_module_1 = require('./admin/admin.module');
-var crises_module_1 = require('./crises/crises.module');
 var heroes_module_1 = require('./heroes/heroes.module');
 var app_routes_module_1 = require('./app-routes.module');
+var login_routes_module_1 = require('./auth/login-routes.module');
 // import service
 var dialog_service_1 = require('./shared/services/dialog.service');
 // import component
 var app_component_1 = require('./app.component');
+var login_component_1 = require('./auth/login.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -30,13 +30,13 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                admin_module_1.AdminModule,
-                crises_module_1.CrisesModule,
                 heroes_module_1.HeroesModule,
-                app_routes_module_1.AppRoutesModule
+                app_routes_module_1.AppRoutesModule,
+                login_routes_module_1.LoginRoutesModule
             ],
             declarations: [
-                app_component_1.AppComponent
+                app_component_1.AppComponent,
+                login_component_1.LoginComponent
             ],
             providers: [
                 dialog_service_1.DialogService

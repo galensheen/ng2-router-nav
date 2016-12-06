@@ -20,8 +20,6 @@ var AuthGuardService = (function () {
         this.router = router;
     }
     AuthGuardService.prototype.canActivate = function (route, state) {
-        console.log('canActivate route: ', route);
-        console.log('canActivate state: ', state);
         var url = state.url;
         return this.checkLogin(url);
     };

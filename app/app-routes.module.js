@@ -18,6 +18,18 @@ var selective_preload_strategy_1 = require('./core/selective-preload-strategy');
 var auth_service_1 = require('./core/auth.service');
 var auth_guard_service_1 = require('./core/auth-guard.service');
 var appRoutes = [
+    {
+        path: 'admin',
+        loadChildren: 'app/admin/admin.module#AdminModule',
+        canLoad: [auth_guard_service_1.AuthGuardService]
+    },
+    {
+        path: 'crises',
+        loadChildren: 'app/crises/crises.module#CrisesModule',
+        data: {
+            preload: true
+        }
+    },
     { path: '', redirectTo: '/heroes', pathMatch: 'full' }
 ];
 var AppRoutesModule = (function () {
@@ -25,7 +37,7 @@ var AppRoutesModule = (function () {
     }
     AppRoutesModule = __decorate([
         core_1.NgModule({
-            imports: [router_1.RouterModule.forRoot(appRoutes)],
+            imports: [router_1.RouterModule.forRoot(appRoutes, { preloadingStrategy: selective_preload_strategy_1.PreloadSelectedModules })],
             exports: [router_1.RouterModule],
             providers: [can_deactivate_guard_service_1.CanDeactivateGuardService, selective_preload_strategy_1.PreloadSelectedModules, auth_service_1.AuthService, auth_guard_service_1.AuthGuardService]
         }), 
