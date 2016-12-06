@@ -15,6 +15,9 @@ var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var admin_routes_module_1 = require('./admin-routes.module');
 var admin_component_1 = require('./admin.component');
+var admin_dashboard_component_1 = require('./admin-dashboard.component');
+var manage_crises_component_1 = require('./manage-crises.component');
+var manage_heroes_component_1 = require('./manage-heroes.component');
 var AdminModule = (function () {
     function AdminModule() {
     }
@@ -25,7 +28,10 @@ var AdminModule = (function () {
                 admin_routes_module_1.AdminRoutesModule
             ],
             declarations: [
-                admin_component_1.AdminComponent
+                admin_component_1.AdminComponent,
+                admin_dashboard_component_1.AdminDashboardComponent,
+                manage_crises_component_1.ManageCrisesComponent,
+                manage_heroes_component_1.ManaggeHeroesComponent
             ]
         }), 
         __metadata('design:paramtypes', [])

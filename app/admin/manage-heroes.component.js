@@ -1,5 +1,5 @@
 /**
- * Created by galen on 16/12/5.
+ * Created by galen on 16/12/6.
  */
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -12,17 +12,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var user_component_1 = require('./user.component');
-var CoreModule = (function () {
-    function CoreModule() {
+var ManaggeHeroesComponent = (function () {
+    function ManaggeHeroesComponent() {
     }
-    CoreModule = __decorate([
-        core_1.NgModule({
-            declarations: [user_component_1.UserComponent]
+    ManaggeHeroesComponent = __decorate([
+        core_1.Component({
+            template: '<p>Manage your heroes here</p>'
         }), 
         __metadata('design:paramtypes', [])
-    ], CoreModule);
-    return CoreModule;
+    ], ManaggeHeroesComponent);
+    return ManaggeHeroesComponent;
 }());
-exports.CoreModule = CoreModule;
-//# sourceMappingURL=core.module.js.map
+exports.ManaggeHeroesComponent = ManaggeHeroesComponent;
+//# sourceMappingURL=manage-heroes.component.js.map

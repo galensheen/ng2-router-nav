@@ -1,5 +1,5 @@
 /**
- * Created by galen on 16/12/5.
+ * Created by galen on 16/12/6.
  */
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -11,18 +11,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+require('rxjs/add/observable/of');
 var core_1 = require('@angular/core');
-var AdminComponent = (function () {
-    function AdminComponent() {
+var Observable_1 = require('rxjs/Observable');
+var PreloadSelectedModules = (function () {
+    function PreloadSelectedModules() {
+        this.preloadedModules = [];
     }
-    AdminComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            templateUrl: 'admin.component.html'
-        }), 
+    PreloadSelectedModules.prototype.preload = function (route, load) {
+        if (route.data && route.data['preload']) {
+            this.preloadedModules.push(route.path);
+            console.log('Preloaded: ' + route.path);
+            return load();
+        }
+        else {
+            return Observable_1.Observable.of(null);
+        }
+    };
+    PreloadSelectedModules = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AdminComponent);
-    return AdminComponent;
+    ], PreloadSelectedModules);
+    return PreloadSelectedModules;
 }());
-exports.AdminComponent = AdminComponent;
-//# sourceMappingURL=admin.component.js.map
+exports.PreloadSelectedModules = PreloadSelectedModules;
+//# sourceMappingURL=selective-preload-strategy.js.map

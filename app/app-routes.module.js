@@ -14,6 +14,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var can_deactivate_guard_service_1 = require('./core/can-deactivate-guard.service');
+var selective_preload_strategy_1 = require('./core/selective-preload-strategy');
+var auth_service_1 = require('./core/auth.service');
+var auth_guard_service_1 = require('./core/auth-guard.service');
 var appRoutes = [
     { path: '', redirectTo: '/heroes', pathMatch: 'full' }
 ];
@@ -24,7 +27,7 @@ var AppRoutesModule = (function () {
         core_1.NgModule({
             imports: [router_1.RouterModule.forRoot(appRoutes)],
             exports: [router_1.RouterModule],
-            providers: [can_deactivate_guard_service_1.CanDeactivateGuardService]
+            providers: [can_deactivate_guard_service_1.CanDeactivateGuardService, selective_preload_strategy_1.PreloadSelectedModules, auth_service_1.AuthService, auth_guard_service_1.AuthGuardService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppRoutesModule);

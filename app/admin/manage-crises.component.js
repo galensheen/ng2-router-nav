@@ -1,5 +1,5 @@
 /**
- * Created by galen on 16/12/5.
+ * Created by galen on 16/12/6.
  */
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -12,17 +12,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AdminComponent = (function () {
-    function AdminComponent() {
+var ManageCrisesComponent = (function () {
+    function ManageCrisesComponent() {
     }
-    AdminComponent = __decorate([
+    ManageCrisesComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
-            templateUrl: 'admin.component.html'
+            template: '<p>Manage your crises here</p>'
         }), 
         __metadata('design:paramtypes', [])
-    ], AdminComponent);
-    return AdminComponent;
+    ], ManageCrisesComponent);
+    return ManageCrisesComponent;
 }());
-exports.AdminComponent = AdminComponent;
-//# sourceMappingURL=admin.component.js.map
+exports.ManageCrisesComponent = ManageCrisesComponent;
+//# sourceMappingURL=manage-crises.component.js.map

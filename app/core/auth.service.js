@@ -1,5 +1,5 @@
 /**
- * Created by galen on 16/12/5.
+ * Created by galen on 16/12/6.
  */
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -12,17 +12,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var UserComponent = (function () {
-    function UserComponent() {
+var Observable_1 = require('rxjs/Observable');
+require('rxjs/add/observable/of');
+require('rxjs/add/operator/do');
+require('rxjs/add/operator/delay');
+var AuthService = (function () {
+    function AuthService() {
+        this.isLoggedIn = false;
     }
-    UserComponent = __decorate([
-        core_1.Component({
-            selector: 'my-user',
-            template: '<div>这是core.component</div>'
-        }), 
+    AuthService.prototype.login = function () {
+        var _this = this;
+        return Observable_1.Observable.of(true).delay(1000).do(function (val) { return _this.isLoggedIn = true; });
+    };
+    AuthService.prototype.logout = function () {
+        this.isLoggedIn = false;
+    };
+    AuthService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], UserComponent);
-    return UserComponent;
+    ], AuthService);
+    return AuthService;
 }());
-exports.UserComponent = UserComponent;
-//# sourceMappingURL=user.component.js.map
+exports.AuthService = AuthService;
+//# sourceMappingURL=auth.service.js.map
