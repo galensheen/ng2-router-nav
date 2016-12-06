@@ -21,6 +21,13 @@ var CrisisDetailComponent = (function () {
         this.router = router;
         this.dialogService = dialogService;
     }
+    Object.defineProperty(CrisisDetailComponent.prototype, "routeAnimation", {
+        get: function () {
+            return true;
+        },
+        enumerable: true,
+        configurable: true
+    });
     CrisisDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.data.subscribe(function (data) {
@@ -45,10 +52,36 @@ var CrisisDetailComponent = (function () {
     CrisisDetailComponent.prototype.gotoCrises = function () {
         this.router.navigate(['../'], { relativeTo: this.route });
     };
+    __decorate([
+        core_1.HostBinding('@routeAnimation'), 
+        __metadata('design:type', Object)
+    ], CrisisDetailComponent.prototype, "routeAnimation", null);
     CrisisDetailComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            templateUrl: 'crisis-detail.component.html'
+            templateUrl: 'crisis-detail.component.html',
+            styles: ['input {width: 20em}', ':host {position: absolute;display: block;}'],
+            animations: [
+                core_1.trigger('routeAnimation', [
+                    core_1.state('*', core_1.style({
+                        opacity: 1,
+                        transform: 'translateX(0)'
+                    })),
+                    core_1.transition(':enter', [
+                        core_1.style({
+                            opacity: 0,
+                            transform: 'translateX(-100%)'
+                        }),
+                        core_1.animate('0.2s ease-in')
+                    ]),
+                    core_1.transition(':leave', [
+                        core_1.animate('0.5s ease-out', core_1.style({
+                            opacity: 0,
+                            transform: 'translateY(100%)'
+                        }))
+                    ])
+                ])
+            ]
         }), 
         __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router, dialog_service_1.DialogService])
     ], CrisisDetailComponent);

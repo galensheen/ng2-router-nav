@@ -21,6 +21,13 @@ var HeroDetailComponent = (function () {
         this.route = route;
         this.router = router;
     }
+    Object.defineProperty(HeroDetailComponent.prototype, "routeAnimation", {
+        get: function () {
+            return true;
+        },
+        enumerable: true,
+        configurable: true
+    });
     HeroDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.data.subscribe(function (data) {
@@ -45,10 +52,31 @@ var HeroDetailComponent = (function () {
     HeroDetailComponent.prototype.gotoHeroes = function () {
         this.router.navigate(['../'], { relativeTo: this.route });
     };
+    __decorate([
+        core_1.HostBinding('@routeAnimation'), 
+        __metadata('design:type', Object)
+    ], HeroDetailComponent.prototype, "routeAnimation", null);
     HeroDetailComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            templateUrl: 'hero-detail.component.html'
+            templateUrl: 'hero-detail.component.html',
+            styles: [':host {display: block; position: absolute}'],
+            animations: [
+                core_1.trigger('routeAnimation', [
+                    core_1.state('*', core_1.style({
+                        opacity: 1,
+                        transform: 'translateX(0)'
+                    })),
+                    core_1.transition(':enter', [
+                        core_1.style({
+                            opacity: 0,
+                            transform: 'translateX(-100%)  rotate(360deg)'
+                        }),
+                        core_1.animate('0.4s ease-in')
+                    ]),
+                    core_1.transition(':leave', core_1.animate('0.5s ease-out', core_1.style({ opacity: 0, transform: 'translateY(100%)' })))
+                ])
+            ]
         }), 
         __metadata('design:paramtypes', [dialog_service_1.DialogService, router_1.ActivatedRoute, router_1.Router])
     ], HeroDetailComponent);
