@@ -7,14 +7,24 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {HeroesComponent} from './components/heroes.component';
 import {HeroDetailComponent} from './components/hero-detail.component';
-import {HeroDetailDefaultComponent} from './components/hero-detail-default.component'
+import {HeroDetailDefaultComponent} from './components/hero-detail-default.component';
+
+import {HeroDetailResolveService} from './services/hero-detail-resolve.service';
+import {CanDeactivateGuardService} from '../core/can-deactivate-guard.service';
 
 const heroesRoutes: Routes = [
     {
         path: 'heroes',
         component: HeroesComponent,
         children: [
-            {path: ':id', component: HeroDetailComponent},
+            {
+                path: ':id',
+                component: HeroDetailComponent,
+                canDeactivate: [CanDeactivateGuardService],
+                resolve: {
+                    hero: HeroDetailResolveService
+                }
+            },
             {path: '', component: HeroDetailDefaultComponent}
         ]
     }
@@ -22,6 +32,7 @@ const heroesRoutes: Routes = [
 
 @NgModule({
     imports: [RouterModule.forChild(heroesRoutes)],
-    exports: [RouterModule]
+    exports: [RouterModule],
+    providers: [HeroDetailResolveService]
 })
 export class HeroesRoutesModule {}

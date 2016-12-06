@@ -16,12 +16,21 @@ var router_1 = require('@angular/router');
 var heroes_component_1 = require('./components/heroes.component');
 var hero_detail_component_1 = require('./components/hero-detail.component');
 var hero_detail_default_component_1 = require('./components/hero-detail-default.component');
+var hero_detail_resolve_service_1 = require('./services/hero-detail-resolve.service');
+var can_deactivate_guard_service_1 = require('../core/can-deactivate-guard.service');
 var heroesRoutes = [
     {
         path: 'heroes',
         component: heroes_component_1.HeroesComponent,
         children: [
-            { path: ':id', component: hero_detail_component_1.HeroDetailComponent },
+            {
+                path: ':id',
+                component: hero_detail_component_1.HeroDetailComponent,
+                canDeactivate: [can_deactivate_guard_service_1.CanDeactivateGuardService],
+                resolve: {
+                    hero: hero_detail_resolve_service_1.HeroDetailResolveService
+                }
+            },
             { path: '', component: hero_detail_default_component_1.HeroDetailDefaultComponent }
         ]
     }
@@ -32,7 +41,8 @@ var HeroesRoutesModule = (function () {
     HeroesRoutesModule = __decorate([
         core_1.NgModule({
             imports: [router_1.RouterModule.forChild(heroesRoutes)],
-            exports: [router_1.RouterModule]
+            exports: [router_1.RouterModule],
+            providers: [hero_detail_resolve_service_1.HeroDetailResolveService]
         }), 
         __metadata('design:paramtypes', [])
     ], HeroesRoutesModule);

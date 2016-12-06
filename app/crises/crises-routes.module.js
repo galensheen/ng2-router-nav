@@ -17,6 +17,7 @@ var crises_component_1 = require('./components/crises.component');
 var crisis_detail_component_1 = require('./components/crisis-detail.component');
 var crisis_detail_default_component_1 = require('./components/crisis-detail-default.component');
 var crisis_detail_resolve_service_1 = require('./services/crisis-detail-resolve.service');
+var can_deactivate_guard_service_1 = require('../core/can-deactivate-guard.service');
 var crisesRoutes = [
     {
         path: 'crises',
@@ -25,6 +26,9 @@ var crisesRoutes = [
             {
                 path: ':id',
                 component: crisis_detail_component_1.CrisisDetailComponent,
+                canDeactivate: [
+                    can_deactivate_guard_service_1.CanDeactivateGuardService
+                ],
                 resolve: {
                     crisis: crisis_detail_resolve_service_1.CrisisDetailResolveService
                 }

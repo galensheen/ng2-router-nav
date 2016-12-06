@@ -13,6 +13,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
+var forms_1 = require('@angular/forms');
 var heroes_routes_module_1 = require('./heroes-routes.module');
 var heroes_component_1 = require('./components/heroes.component');
 var hero_detail_component_1 = require('./components/hero-detail.component');
@@ -25,6 +26,7 @@ var HeroesModule = (function () {
         core_1.NgModule({
             imports: [
                 common_1.CommonModule,
+                forms_1.FormsModule,
                 heroes_routes_module_1.HeroesRoutesModule
             ],
             declarations: [

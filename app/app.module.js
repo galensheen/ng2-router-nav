@@ -20,6 +20,7 @@ var crises_module_1 = require('./crises/crises.module');
 var heroes_module_1 = require('./heroes/heroes.module');
 var app_routes_module_1 = require('./app-routes.module');
 // import service
+var dialog_service_1 = require('./shared/services/dialog.service');
 // import component
 var app_component_1 = require('./app.component');
 var AppModule = (function () {
@@ -36,6 +37,9 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent
+            ],
+            providers: [
+                dialog_service_1.DialogService
             ],
             bootstrap: [
                 app_component_1.AppComponent

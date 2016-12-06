@@ -4,6 +4,7 @@
 
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
 
 import {HeroesRoutesModule} from './heroes-routes.module';
 
@@ -15,6 +16,7 @@ import {HeroDetailDefaultComponent} from './components/hero-detail-default.compo
 @NgModule({
     imports: [
         CommonModule,
+        FormsModule,
         HeroesRoutesModule
     ],
     declarations: [

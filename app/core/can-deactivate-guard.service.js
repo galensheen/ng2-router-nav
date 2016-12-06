@@ -1,5 +1,5 @@
 /**
- * Created by galen on 16/12/5.
+ * Created by galen on 16/12/6.
  */
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -12,23 +12,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var can_deactivate_guard_service_1 = require('./core/can-deactivate-guard.service');
-var appRoutes = [
-    { path: '', redirectTo: '/heroes', pathMatch: 'full' }
-];
-var AppRoutesModule = (function () {
-    function AppRoutesModule() {
+var CanDeactivateGuardService = (function () {
+    function CanDeactivateGuardService() {
     }
-    AppRoutesModule = __decorate([
-        core_1.NgModule({
-            imports: [router_1.RouterModule.forRoot(appRoutes)],
-            exports: [router_1.RouterModule],
-            providers: [can_deactivate_guard_service_1.CanDeactivateGuardService]
-        }), 
+    CanDeactivateGuardService.prototype.canDeactivate = function (component) {
+        return component.canDeactivate ? component.canDeactivate() : true;
+    };
+    CanDeactivateGuardService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppRoutesModule);
-    return AppRoutesModule;
+    ], CanDeactivateGuardService);
+    return CanDeactivateGuardService;
 }());
-exports.AppRoutesModule = AppRoutesModule;
-//# sourceMappingURL=app-routes.module.js.map
+exports.CanDeactivateGuardService = CanDeactivateGuardService;
+//# sourceMappingURL=can-deactivate-guard.service.js.map

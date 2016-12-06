@@ -14,17 +14,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 require('rxjs/add/operator/switchMap');
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var heroes_service_1 = require('../services/heroes.service');
+var dialog_service_1 = require('../../shared/services/dialog.service');
 var HeroDetailComponent = (function () {
-    function HeroDetailComponent(heroesService, route, router) {
-        this.heroesService = heroesService;
+    function HeroDetailComponent(dialogService, route, router) {
+        this.dialogService = dialogService;
         this.route = route;
         this.router = router;
     }
     HeroDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.route.params.switchMap(function (params) { return _this.heroesService.getHero(+params['id']); })
-            .subscribe(function (hero) { return _this.hero = hero; });
+        this.route.data.subscribe(function (data) {
+            _this.hero = data.hero;
+            _this.editName = _this.hero.name;
+        });
+    };
+    HeroDetailComponent.prototype.save = function () {
+        this.hero.name = this.editName;
+        this.gotoHeroes();
+    };
+    HeroDetailComponent.prototype.cancel = function () {
+        this.editName = this.hero.name;
+        this.gotoHeroes();
+    };
+    HeroDetailComponent.prototype.canDeactivate = function () {
+        if (!this.hero || this.hero.name === this.editName) {
+            return true;
+        }
+        return this.dialogService.confirm('取消修改?');
     };
     HeroDetailComponent.prototype.gotoHeroes = function () {
         this.router.navigate(['../'], { relativeTo: this.route });
@@ -34,7 +50,7 @@ var HeroDetailComponent = (function () {
             moduleId: module.id,
             templateUrl: 'hero-detail.component.html'
         }), 
-        __metadata('design:paramtypes', [heroes_service_1.HeroesService, router_1.ActivatedRoute, router_1.Router])
+        __metadata('design:paramtypes', [dialog_service_1.DialogService, router_1.ActivatedRoute, router_1.Router])
     ], HeroDetailComponent);
     return HeroDetailComponent;
 }());

@@ -14,6 +14,7 @@ import {HeroesModule} from './heroes/heroes.module';
 import {AppRoutesModule} from './app-routes.module';
 
 // import service
+import {DialogService} from './shared/services/dialog.service';
 
 // import component
 import {AppComponent} from './app.component';
@@ -29,6 +30,9 @@ import {AppComponent} from './app.component';
     ],
     declarations: [
         AppComponent
+    ],
+    providers: [
+        DialogService
     ],
     bootstrap: [
         AppComponent

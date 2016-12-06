@@ -13,6 +13,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
+var forms_1 = require('@angular/forms');
 var crises_routes_module_1 = require('./crises-routes.module');
 var crises_component_1 = require('./components/crises.component');
 var crisis_detail_component_1 = require('./components/crisis-detail.component');
@@ -25,6 +26,7 @@ var CrisesModule = (function () {
         core_1.NgModule({
             imports: [
                 common_1.CommonModule,
+                forms_1.FormsModule,
                 crises_routes_module_1.CrisesRoutesModule
             ],
             declarations: [

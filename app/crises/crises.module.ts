@@ -4,6 +4,7 @@
 
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {FormsModule, Form} from '@angular/forms';
 
 import {CrisesRoutesModule} from './crises-routes.module';
 
@@ -15,6 +16,7 @@ import {CrisesService} from './services/crises.service';
 @NgModule({
     imports: [
         CommonModule,
+        FormsModule,
         CrisesRoutesModule
     ],
     declarations: [

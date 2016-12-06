@@ -8,6 +8,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 
 import {Hero, HeroesService} from '../services/heroes.service';
+import {DialogService} from '../../shared/services/dialog.service';
 
 @Component({
     moduleId: module.id,
@@ -16,12 +17,33 @@ import {Hero, HeroesService} from '../services/heroes.service';
 export class HeroDetailComponent implements OnInit {
 
     hero: Hero;
+    editName: string;
 
-    constructor(private heroesService: HeroesService, private route: ActivatedRoute, private router: Router) {}
+    constructor(private dialogService: DialogService, private route: ActivatedRoute, private router: Router) {}
 
     ngOnInit() {
-        this.route.params.switchMap((params: Params) => this.heroesService.getHero(+params['id']))
-            .subscribe((hero: Hero) => this.hero = hero);
+        this.route.data.subscribe((data: {hero: Hero}) => {
+            this.hero = data.hero;
+            this.editName = this.hero.name;
+        });
+    }
+
+    save() {
+        this.hero.name = this.editName;
+        this.gotoHeroes();
+    }
+
+    cancel() {
+        this.editName = this.hero.name;
+        this.gotoHeroes();
+    }
+
+    canDeactivate(): Promise<boolean> | boolean {
+        if (!this.hero || this.hero.name === this.editName) {
+            return true;
+        }
+
+        return this.dialogService.confirm('取消修改?');
     }
 
     gotoHeroes() {

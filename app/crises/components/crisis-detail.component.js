@@ -14,18 +14,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 require('rxjs/add/operator/switchMap');
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var crises_service_1 = require('../services/crises.service');
+var dialog_service_1 = require('../../shared/services/dialog.service');
 var CrisisDetailComponent = (function () {
-    function CrisisDetailComponent(crisesService, route, router) {
-        this.crisesService = crisesService;
+    function CrisisDetailComponent(route, router, dialogService) {
         this.route = route;
         this.router = router;
+        this.dialogService = dialogService;
     }
     CrisisDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.data.subscribe(function (data) {
             _this.crisis = data.crisis;
+            _this.editName = _this.crisis.name;
         });
+    };
+    CrisisDetailComponent.prototype.save = function () {
+        this.crisis.name = this.editName;
+        this.gotoCrises();
+    };
+    CrisisDetailComponent.prototype.cancel = function () {
+        this.editName = this.crisis.name;
+        this.gotoCrises();
+    };
+    CrisisDetailComponent.prototype.canDeactivate = function () {
+        if (!this.crisis || this.crisis.name === this.editName) {
+            return true;
+        }
+        return this.dialogService.confirm('取消修改?');
     };
     CrisisDetailComponent.prototype.gotoCrises = function () {
         this.router.navigate(['../'], { relativeTo: this.route });
@@ -35,7 +50,7 @@ var CrisisDetailComponent = (function () {
             moduleId: module.id,
             templateUrl: 'crisis-detail.component.html'
         }), 
-        __metadata('design:paramtypes', [crises_service_1.CrisesService, router_1.ActivatedRoute, router_1.Router])
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router, dialog_service_1.DialogService])
     ], CrisisDetailComponent);
     return CrisisDetailComponent;
 }());

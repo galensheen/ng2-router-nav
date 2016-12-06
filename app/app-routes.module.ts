@@ -5,7 +5,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-import {AppComponent} from './app.component';
+import {CanDeactivateGuardService} from './core/can-deactivate-guard.service';
 
 const appRoutes: Routes = [
     {path: '', redirectTo: '/heroes', pathMatch: 'full'}
@@ -13,6 +13,7 @@ const appRoutes: Routes = [
 
 @NgModule({
     imports: [RouterModule.forRoot(appRoutes)],
-    exports: [RouterModule]
+    exports: [RouterModule],
+    providers: [CanDeactivateGuardService]
 })
 export class AppRoutesModule {}
