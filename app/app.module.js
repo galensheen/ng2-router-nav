@@ -1,6 +1,3 @@
-/**
- * Created by galen on 16/12/5.
- */
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -11,16 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-// import core libs
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
-// import other modules
 var heroes_module_1 = require('./heroes/heroes.module');
 var app_routes_module_1 = require('./app-routes.module');
 var login_routes_module_1 = require('./auth/login-routes.module');
-// import service
 var dialog_service_1 = require('./shared/services/dialog.service');
-// import component
 var app_component_1 = require('./app.component');
 var login_component_1 = require('./auth/login.component');
 var AppModule = (function () {

@@ -6,7 +6,10 @@
     "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\"",
     "lite": "lite-server",
     "tsc": "tsc",
-    "tsc:w": "tsc -w"
+    "tsc:w": "tsc -w",
+    "ngc": "ngc -p tsconfig-aot.json",
+    "rollup": "rollup -c rollup-config.js",
+    "build": "node aot-pre.js && npm run ngc"
   },
   "repository": {
     "type": "git",
@@ -17,11 +20,13 @@
   "dependencies": {
     "@angular/common": "^2.2.2",
     "@angular/compiler": "^2.2.2",
+    "@angular/compiler-cli": "^2.2.4",
     "@angular/core": "^2.2.2",
     "@angular/forms": "^2.2.2",
     "@angular/http": "^2.2.2",
     "@angular/platform-browser": "^2.2.2",
     "@angular/platform-browser-dynamic": "^2.2.2",
+    "@angular/platform-server": "^2.2.4",
     "@angular/router": "^3.2.2",
     "@angular/upgrade": "^2.2.2",
     "angular-in-memory-web-api": "^0.1.16",
@@ -37,18 +42,16 @@
   },
   "homepage": "https://github.com/galensheen/ng2-router-nav#readme",
   "devDependencies": {
-    "@types/core-js": "^0.9.35",
     "@types/node": "^0.0.2",
     "concurrently": "^3.1.0",
+    "del": "^2.2.2",
     "jspm": "^0.16.48",
     "lite-server": "^2.2.2",
+    "mkdirp": "^0.5.1",
+    "rollup": "^0.36.4",
+    "rollup-plugin-commonjs": "^5.0.5",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-uglify": "^1.0.1",
     "typescript": "^2.0.10"
-  },
-  "jspm": {
-    "configFile": "system.config.js",
-    "dependencies": {},
-    "devDependencies": {
-      "typescript": "npm:typescript@^2.0.7"
-    }
   }
 }

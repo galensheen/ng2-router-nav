@@ -13,7 +13,7 @@ import {AuthService} from '../core/auth.service';
 export class LoginComponent {
     message: string;
 
-    constructor(private authService: AuthService, private router: Router) {
+    constructor(public authService: AuthService, public router: Router) {
         this.setMessage();
     }
 

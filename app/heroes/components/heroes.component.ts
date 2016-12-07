@@ -26,7 +26,7 @@ export class HeroesComponent implements OnInit {
         });
     }
 
-    onSelect(hero) {
+    onSelect(hero: Hero) {
         this.router.navigate([hero.id], {relativeTo: this.route});
     }
 }

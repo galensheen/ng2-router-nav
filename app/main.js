@@ -1,6 +1,3 @@
-/**
- * Created by galen on 16/12/5.
- */
 "use strict";
 var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic');
 var app_module_1 = require('./app.module');
