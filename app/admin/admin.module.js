@@ -1,39 +1,32 @@
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
-var admin_routes_module_1 = require('./admin-routes.module');
-var admin_component_1 = require('./admin.component');
-var admin_dashboard_component_1 = require('./admin-dashboard.component');
-var manage_crises_component_1 = require('./manage-crises.component');
-var manage_heroes_component_1 = require('./manage-heroes.component');
-var AdminModule = (function () {
+/**
+ * Created by galen on 16/12/5.
+ */
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AdminRoutesModule } from './admin-routes.module';
+import { AdminComponent } from './admin.component';
+import { AdminDashboardComponent } from './admin-dashboard.component';
+import { ManageCrisesComponent } from './manage-crises.component';
+import { ManaggeHeroesComponent } from './manage-heroes.component';
+export var AdminModule = (function () {
     function AdminModule() {
     }
-    AdminModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                common_1.CommonModule,
-                admin_routes_module_1.AdminRoutesModule
-            ],
-            declarations: [
-                admin_component_1.AdminComponent,
-                admin_dashboard_component_1.AdminDashboardComponent,
-                manage_crises_component_1.ManageCrisesComponent,
-                manage_heroes_component_1.ManaggeHeroesComponent
-            ]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AdminModule);
+    AdminModule.decorators = [
+        { type: NgModule, args: [{
+                    imports: [
+                        CommonModule,
+                        AdminRoutesModule
+                    ],
+                    declarations: [
+                        AdminComponent,
+                        AdminDashboardComponent,
+                        ManageCrisesComponent,
+                        ManaggeHeroesComponent
+                    ]
+                },] },
+    ];
+    /** @nocollapse */
+    AdminModule.ctorParameters = [];
     return AdminModule;
 }());
-exports.AdminModule = AdminModule;
 //# sourceMappingURL=admin.module.js.map

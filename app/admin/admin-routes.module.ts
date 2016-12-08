@@ -19,7 +19,7 @@ const adminRoutes: Routes = [
         canActivate: [AuthGuardService],
         children: [
             {
-                path: '',
+                path: 'admin',
                 canActivateChild: [AuthGuardService],
                 children: [
                     {path: 'crises', component: ManageCrisesComponent},

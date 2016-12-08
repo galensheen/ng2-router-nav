@@ -8,6 +8,8 @@ import {BrowserModule} from '@angular/platform-browser';
 
 // import other modules
 import {HeroesModule} from './heroes/heroes.module';
+import {CrisesModule} from './crises/crises.module';
+import {AdminModule} from './admin/admin.module';
 
 import {AppRoutesModule} from './app-routes.module';
 import {LoginRoutesModule} from './auth/login-routes.module';
@@ -24,6 +26,8 @@ import {LoginComponent} from './auth/login.component';
     imports: [
         BrowserModule,
         HeroesModule,
+        CrisesModule,
+        AdminModule,
         AppRoutesModule,
         LoginRoutesModule
     ],

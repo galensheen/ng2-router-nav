@@ -14,7 +14,7 @@ import {CanDeactivateGuardService} from '../core/can-deactivate-guard.service';
 
 const crisesRoutes: Routes = [
     {
-        path: '',
+        path: 'crises',
         component: CrisesComponent,
         children: [
             {

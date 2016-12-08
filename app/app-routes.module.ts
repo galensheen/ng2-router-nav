@@ -11,18 +11,6 @@ import {AuthService} from './core/auth.service';
 import {AuthGuardService} from './core/auth-guard.service';
 
 const appRoutes: Routes = [
-    {
-        path: 'admin',
-        loadChildren: 'app/admin/admin.module#AdminModule',
-        canLoad: [AuthGuardService]
-    },
-    {
-        path: 'crises',
-        loadChildren: 'app/crises/crises.module#CrisesModule',
-        data: {
-            preload: true
-        }
-    },
     {path: '', redirectTo: '/heroes', pathMatch: 'full'}
 ];
 

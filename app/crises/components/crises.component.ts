@@ -25,7 +25,7 @@ export class CrisesComponent implements OnInit {
         });
     }
 
-    onSelect(crisis) {
+    onSelect(crisis: Crisis) {
         this.router.navigate([crisis.id], {relativeTo: this.route});
     }
 }
